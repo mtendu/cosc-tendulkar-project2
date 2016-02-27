@@ -273,7 +273,7 @@ public class Player {
 	/**
 	 * Pay rent to.
 	 *
-	 * @param owner the owner
+	 * @param theOwner the theOwner
 	 * @param rentValue the rent value
 	 */
 	public void payRentTo(Player owner, int rentValue) {
