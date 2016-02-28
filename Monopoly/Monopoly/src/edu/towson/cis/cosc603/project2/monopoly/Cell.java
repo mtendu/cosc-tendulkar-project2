@@ -60,7 +60,7 @@ public abstract class Cell implements IOwnable {
 	/**
 	 * Sets the theOwner.
 	 *
-	 * @param theOwner the new theOwner
+	 * @param owner the new owner
 	 */
 	public void setOwner(Player owner) {
 		this.theOwner = owner;

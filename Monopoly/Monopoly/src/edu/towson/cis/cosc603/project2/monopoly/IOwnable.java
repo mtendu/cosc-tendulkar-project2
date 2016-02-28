@@ -3,9 +3,11 @@
  */
 package edu.towson.cis.cosc603.project2.monopoly;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Madhura Tendulkar
+ * The Interface IOwnable.
  *
+ * @author Madhura Tendulkar
  */
 public interface IOwnable {
 
