@@ -130,12 +130,12 @@ public class Player {
      *
      * @return the all properties
      */
-    public Cell[] getAllProperties() {
+    public IOwnable[] getAllProperties() {
         ArrayList<Cell> list = new ArrayList<Cell>();
         list.addAll(properties);
         list.addAll(utilities);
         list.addAll(railroads);
-        return (Cell[])list.toArray(new Cell[list.size()]);
+        return (IOwnable[])list.toArray(new Cell[list.size()]);
     }
 
 	/**

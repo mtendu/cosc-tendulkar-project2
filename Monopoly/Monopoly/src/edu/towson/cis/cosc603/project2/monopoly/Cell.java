@@ -4,7 +4,7 @@ package edu.towson.cis.cosc603.project2.monopoly;
 /**
  * The Class Cell.
  */
-public abstract class Cell {
+public abstract class Cell implements IOwnable {
 	
 	/** The name. */
 	private String name;
@@ -42,9 +42,10 @@ public abstract class Cell {
 		return 0;
 	}
 
-	/**
-	 * Play action.
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc603.project2.monopoly.IOwnable#playAction()
 	 */
+	@Override
 	public abstract void playAction();
 
 	/**
