@@ -11,7 +11,9 @@ public interface IOwnable {
 
 	/**
 	 * Play action.
+	 * @param msg TODO
+	 * @return TODO
 	 */
-	void playAction();
+	boolean playAction(String msg);
 
 }
