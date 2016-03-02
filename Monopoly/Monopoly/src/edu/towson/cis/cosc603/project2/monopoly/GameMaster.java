@@ -377,12 +377,21 @@ public class GameMaster {
 	 * Reset.
 	 */
 	public void reset() {
-		for(int i = 0; i < getNumberOfPlayers(); i++){
-			Player player = (Player)players.get(i);
+		setPlayerPosition();
+		turn = 0;
+		if (gameBoard != null) {
+			gameBoard.removeCards();
+		}
+	}
+	/**
+	 * Extracted setPlayerPosition() from reset();
+	 */
+	private void setPlayerPosition() {
+		for (int i = 0; i < getNumberOfPlayers(); i++) {
+			Player player = (Player) players.get(i);
 			player.setPosition(gameBoard.getCell(0));
 		}
-		if(gameBoard != null) gameBoard.removeCards();
-		turn = 0;
+		
 	}
 	
 	/**
