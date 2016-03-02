@@ -29,11 +29,8 @@ public class PropertyCellTest extends TestCase {
 	public void testPlayerAction() {
 		PropertyCell cell =
 			(PropertyCell) gameMaster.getGameBoard().queryCell("Blue 3");
-		int cellIndex = gameMaster.getGameBoard().queryCellIndex("Blue 3");
-		gameMaster.movePlayer(0, cellIndex);
+		setMovePlayer();
 		gameMaster.getPlayer(0).purchase();
-		gameMaster.switchTurn();
-		gameMaster.movePlayer(1, cellIndex);
 		cell.playAction(null);
 		assertEquals(
 				1500 - cell.getRent(),
@@ -41,5 +38,14 @@ public class PropertyCellTest extends TestCase {
 		assertEquals(
 				1380 + cell.getRent(),
 				gameMaster.getPlayer(0).getMoney());
+	}
+/** 
+ * Extracted setMovePlayer() from testPlayerAction().
+ */
+	private void setMovePlayer() {
+		int cellIndex = gameMaster.getGameBoard().queryCellIndex("Blue 3");
+		gameMaster.movePlayer(0, cellIndex);
+		gameMaster.switchTurn();
+		gameMaster.movePlayer(1, cellIndex);
 	}
 }

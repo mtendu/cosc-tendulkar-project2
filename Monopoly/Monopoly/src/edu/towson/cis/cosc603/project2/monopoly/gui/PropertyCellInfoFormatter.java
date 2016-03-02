@@ -4,16 +4,12 @@ import edu.towson.cis.cosc603.project2.monopoly.Cell;
 import edu.towson.cis.cosc603.project2.monopoly.Player;
 import edu.towson.cis.cosc603.project2.monopoly.PropertyCell;
 
-public class PropertyCellInfoFormatter implements CellInfoFormatter {
+public class PropertyCellInfoFormatter extends OwnerName implements CellInfoFormatter {
     public String format(Cell cell) {
         PropertyCell c = (PropertyCell)cell;
         StringBuffer buf = new StringBuffer();
-        Player owner = cell.getTheOwner();
-        String ownerName = "";
-        if(owner != null) {
-        	ownerName = owner.getName();
-        }
-        buf.append("<html><b><font color='")
+        String ownerName = ownerName(cell);
+		buf.append("<html><b><font color='")
                 .append(c.getColorGroup())
                 .append("'>")
                 .append(cell.getName())
@@ -24,4 +20,6 @@ public class PropertyCellInfoFormatter implements CellInfoFormatter {
                 .append("</html>");
         return buf.toString();
     }
+
+	
 }

@@ -144,13 +144,19 @@ public class PlayerPanel extends JPanel {
     public void displayInfo() {
         lblName.setText(player.getName());
         lblMoney.setText("$ " + player.getMoney());
-        StringBuffer buf = new StringBuffer();
-        IOwnable[] cells = player.getAllProperties();
-        for (int i = 0; i < cells.length; i++) {
-            buf.append(cells[i] + "\n");
-        }
-        txtProperty.setText(buf.toString());
+        setTxtProperty();
     }
+/**
+ * Extracted setTxtProperty() from displayInfo().
+ */
+	private void setTxtProperty() {
+		StringBuffer buf = new StringBuffer();
+		IOwnable[] cells = player.getAllProperties();
+		for (int i = 0; i < cells.length; i++) {
+			buf.append(cells[i] + "\n");
+		}
+		txtProperty.setText(buf.toString());
+	}
     
     public boolean isBuyHouseButtonEnabled() {
         return btnBuyHouse.isEnabled();

@@ -26,14 +26,20 @@ public class UtilityCellTest extends TestCase {
      * Test monopoly.
      */
     public void testMonopoly() {
-        int u1CellIndex = gameMaster.getGameBoard().queryCellIndex("Utility 1");
-        gameMaster.movePlayer(0, u1CellIndex);
-        gameMaster.getPlayer(0).purchase();
-        int u2CellIndex = gameMaster.getGameBoard().queryCellIndex("Utility 2");
-        gameMaster.movePlayer(0, u2CellIndex - u1CellIndex);
+        setMovePlayer();
+		gameMaster.getPlayer(0).purchase();
         gameMaster.getPlayer(0).purchase();
         assertFalse(gameMaster.getPlayer(0).canBuyHouse());
     }
+/**
+ * Extracted setMovePlayer() from testMonopoly().
+ */
+	private void setMovePlayer() {
+		int u1CellIndex = gameMaster.getGameBoard().queryCellIndex("Utility 1");
+		gameMaster.movePlayer(0, u1CellIndex);
+		int u2CellIndex = gameMaster.getGameBoard().queryCellIndex("Utility 2");
+		gameMaster.movePlayer(0, u2CellIndex - u1CellIndex);
+	}
 	
 	/**
 	 * Test player action.
