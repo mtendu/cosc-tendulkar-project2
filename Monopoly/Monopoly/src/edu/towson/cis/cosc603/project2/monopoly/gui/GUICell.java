@@ -30,13 +30,21 @@ public class GUICell extends JPanel {
 	}
 	
 	private void addCellInfo() {
-        lblInfo = new JLabel();
-		displayInfo();
-        JPanel pnlInfo = new JPanel();
-        pnlInfo.setLayout(new GridLayout(1, 1));
-        pnlInfo.add(lblInfo);
-        add(pnlInfo);
+        JPanel pnlInfo = getPnlInfo();
+		add(pnlInfo);
     }
+/**
+ *  Extracted getPnlInfo() from addCellInfo()
+ * @return
+ */
+	private JPanel getPnlInfo() {
+		lblInfo = new JLabel();
+		displayInfo();
+		JPanel pnlInfo = new JPanel();
+		pnlInfo.setLayout(new GridLayout(1, 1));
+		pnlInfo.add(lblInfo);
+		return pnlInfo;
+	}
 	
 	public void addPlayer(int index) {
 		Player player = GameMaster.instance().getPlayer(index);
