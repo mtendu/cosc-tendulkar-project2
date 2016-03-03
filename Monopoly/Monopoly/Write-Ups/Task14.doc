@@ -1,0 +1,4 @@
+﻿Task 14 – Design/Code Smells and Refactoring – On your Own. 
+
+I tried to refactor the Project-1 using JDeodrant and Eclipse's refactoring operations. JDeodrant's  long method bad smell analysis did not provided any solution for further improvement. The God class analysis provided the option to extract class from FireDanger class (class which performs calculates firIndex). Solution was to create new class and it added major portion of code in new class. Thus making existing class smaller and new class too large. 
+Hence I did not perform any refactoring for Project 1.

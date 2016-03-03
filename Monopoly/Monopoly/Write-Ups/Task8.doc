@@ -1,0 +1,9 @@
+﻿Task 8 – Refactoring: Extracting an Interface
+
+
+Eclipse IDE offers Extract an  Interface refactoring operations to make a new interface from Java class. 
+Also we can move methods, variables from the class to an interface. In the  project, extracted an interface IOwnable from Cell.java class and added  method playAction() . 
+After creating interface IOwnable,  we are able to see method playAction() in all subclasses of Cell.java class.  The superclass Cell.java is abstract and does not provide implementation of method hence method is implemented in all subclasses.
+
+I think creating an interface will make code maintainable if we have to perform multiple inheritance. For example StudentWorker, which have property of both Students and Employees. So if we extracted interface from Employee, StudentWorker can implement it. Thus we are adding same feature in multiple classes which are not directly related to each other.
+

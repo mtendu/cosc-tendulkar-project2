@@ -1,0 +1,6 @@
+﻿Task 11 – Refactoring: Changing a Method’s Signature. 
+
+I think changing a method's signature will help to make code maintainable for too many parameters bad smell. If method accepts too many parameters indicates that method may be doing too much work and also makes code less readable. If possible we can reduce the parameters or introduce the parameter object.
+
+In our assignment, we changed the the signature of the method playAction() in Cell.java class using Eclipse's refactoring operation of change method signature. It affected other classes where this method was either called or used and also the subclasses of Cell class and interface IOwnable. Originally method was not accepting any parameter, but now it accepts parameter of type string. Hence the classes which calls this method needs to passed parameter of type string. Also the method is declared as abstract in Cell class, hence it becomes necessary for it's subclasses either to implement it or declare method as abstract. In our case, all subclasses have implemented the method, so it became necessary to change method implementations in them. 
+

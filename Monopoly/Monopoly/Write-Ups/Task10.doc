@@ -1,0 +1,5 @@
+﻿Task 10 – Refactoring: Creating a Local Variable from Repeated Code.
+
+For this task we created local variable colorGroup of type String to save the result of cell.getColorGroup() method call. The method cell.getColorGroup() was repeated twice in method addCell() in GameBoard.java class.Creating local variable from repeated code will help to eliminate bad design smell of duplicate code in same method.
+Method call can be expensive and time consuming.  Hence repeating method call does not make sense. Also creating local variable makes code more readable  and also maybe more accurate if method returns different values over period of time.
+

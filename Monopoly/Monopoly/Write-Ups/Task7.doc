@@ -1,0 +1,9 @@
+﻿Task 7 – Refactoring: Changing a Class Hierarchy
+ 
+PushDown and PullUp: 
+
+Eclipse IDE provides PushDown and PullUp refactoring operations for changing a class hierarchy.Using PushDown option, we can push down class variables and/or its associated methods from superclass to all subclasses.To move the common functionalities from the subclasses to superclass, PullUp option is available.There is high probability that we may mess up with the code while moving code between classes.  Eclipse IDE makes developer's life easy by equipping PushDown and PullUp refactoring option. 
+
+ I think, moving  down the class's fields or  methods to subclasses is not a good idea. It will lead to duplication of code in associated subclasses. Also if there is any change, then we need to alter code in all the subclasses, which is tedious job and also likelihood of committing  error is high.
+Pulling up the common functionality in superclass will make code more maintainable. No repetition of code and incorporating new subclass is easy.
+ 

@@ -1,0 +1,9 @@
+﻿Task 6 – Refactoring: Renaming a Class Field.
+
+For this task, we renamed the class variable 'owner'  to 'theOwner' of type Player in Cell.java class using Eclipse's refactoring operation rename. All the classes where this variable or getter method of this variable were changed. We can observe that in  setter method, parameter is still owner. 
+public void setOwner(Player owner) {
+		this.theOwner = owner;
+	}
+I do not think that it was insight of part of Eclipse's refactoring operations.Variable name of the parameter can be anything and it does not matter as long type of the parameter is correct.
+
+We can also use simple find and replace operation to get this task done. But it is not as efficient as refactoring operations. In find and replace, we provide original and new variable name. So when it encounters original name, it asks user whether to replace it or not. If the variable is used in many places, then it can be time consuming and also monotonous task.Also the user needs to be careful as he has to examine whether is it really requires to be replaced or not. Eclipse refactoring operation of renaming automatically makes changes wherever requires.

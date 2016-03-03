@@ -1,0 +1,18 @@
+﻿Task 13 – Detecting Design Smells. 
+
+Refactoring using Jdeodrant was a good learning experience. JDeodrant shows the refactoring operations for long methods, type checking and God class. It provides refactoring options such as extract method or move the method from one class to another.
+In the Monopoly project using JDeodrant, I made couple of refactoring operations mostly of extracting methods.
+Following refactoring operations were conducted:
+1. Extracted getDiceValue() from applyAction() in MovePlayerCard class. The method applyAction() was too long and was calculating diceValue. This was sign of low cohesion. Hence created private method getDiceValue() to calculate diceValue.
+2. Extracted colorGroups() from exchangeProperty() in Player class. The method colorGroup() will set the colorGroup for the PropertyCell object.
+3. Extracted playerPosition() from reset() in GameMaster class. The method reset() was setting the player's position and was performing more than one operation. Therefore created new method and delegated the task of setting player's position to it.
+4. Extracted getPnlInfo() from addCellInfo() in GUICell class. The method addCellInfo() was first creating the object of type JPanel , set its layout and would add the object. Creating new method getPnlInfo() reduced the task of method addCellInfo().
+5. Extracted setMovePlayer() from testPlayerAction() in PropertyCellTest class and setMovePlayer() from testMonopoly() in UtilityCellTest class. Assigned the work to set the movement of the player to setMovePlayer() method in both the classes. 
+6. Extracted setTxtProperty() from displayInfo() in PlayerPanel class. The displayinfo() will call the setTxtProperty() for setting the text for JTextArea.
+7. There was duplicate code for setting the ownerName in three classes PropertyCellInfoFormatter, RRCellInfoFormatter and UtilCellInfoFormatter. Hence created new parent class OwnerName with protected method getOwnerName() which would return the name of the owner leading to elimination of duplicate code.
+
+
+
+
+
+

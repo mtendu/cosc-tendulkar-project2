@@ -1,0 +1,4 @@
+﻿Task 9 – Refactoring: Extracting a Method from Code.
+
+The method getRent() in PropertyCell.java class was calculating rent and then was returning the rent of the property. This violates the Object Oriented Principle of high cohesion. High cohesion means class or method should do well-defined job. The method is meant to return rent and not calculate it, which lead to low cohesion and makes code less maintainable. 
+Hence we extracted method to calculate rent to private method named calculateMonopoliesRent(). While extracting method, we had option to include array monopolies of type String in the method or to pass array as parameter. I choose to include it in method as lesser the parameters are , more is code maintainable. 

@@ -1,0 +1,31 @@
+﻿Task 15 – Summing it All Up
+
+Lessons learned from Project 2:
+
+Project 2 involved understanding the Monopoly game code and refactoring the code to eliminate the design smells wherever possible. The code provided was working fine but it had lot scope for improvement. There were signs of design smells. Design smells indicates that there are certain areas in code which breaks the Object Oriented Principles and impacts the quality of code. Code smells does not means that code contains errors or bugs. Code works perfectly technically fine and does it's intended task. Bad design smells includes duplicate code, too long methods or class, methods have too many parameters etc. Bad design smells reduces the readability of the code and thus affects the maintainability. If the design smells are not eliminated, code may decay. 
+
+While analysis the monopoly game code, I came across some bad design smells which were discussed in the lecture. Code did had long methods, duplicate code, unclear variable names and lot of scope for improvement. With the help of refactoring operations provided by Eclipse IDE and JDeodrant tool, I was able to improvise the code.  This assignment helped me to learn refactoring operations supported by Eclipse IDE.  There were couple of tasks in this assignment which gave hands on experience on refactoring operations. Conducted operations such as  changing variable names, changing class hierarchy, eliminating duplicate code, extracting interface from class and changing the method signature. If we have to refactor changes manually, there is high chances of messing up with the code.  By using refactoring operations  avoids it and also we can preview how the change will affect the code. 
+Using JDeodrant tool we can run the analysis for bad smells such as feature envy, type checking, long methods and God class. It also provides the solution to overcome bad design such as extract the method , move the method from one class to another etc.
+
+Through this assignment, I learn how to avoid bad design smells and how to deal with it if it exists. 
+
+Eclipse's refactoring operations and JDeodrant:
+
+Eclipse IDE is a wonderful IDE. It makes refactoring code simpler by supporting refactoring operations.
+It supports operations : 
+1. Change variable names
+2. Change method signature
+3. Push down and Pull Up methods between superclass and subclasses.
+4. Extract superclass and interface from class.
+If we perform refactoring in one location of code, changes are penetrated in associated classes. For example in Monopoly code, we change name of variable 'owner' of type player in Cell class from owner to theOwner. The variable name was change in other classes also : Player, PlayerTest and subclasses of Cell class. Also it changed name of  getter and setter methods of the variable. If we had to do it manually, it would be tedious and time consuming task. Also if we forget to make change in one of class, it would be lead to erroneous condition. 
+
+It has it's own limitations. We have to check manually for scope of improvement. Once we detect how to improvise the code, Eclipse IDE applies the refactoring operations. If the we have to maintain code which is written by other developers then it can be tough. First we have to understand the code, search for bad design smells and then apply the refactoring operations to increase maintainability. 
+Refactoring tools such as JDeodrant which we employed in this assignment can be beneficial. JDeodrant runs analysis to detect  selected bad design smells and provides the solutions to improve the readability of code. For example if we run the analysis for long methods, it searches for all the methods which are long, performing more than one task and shows the result. We can preview how the refactoring will affect the code. 
+JDeodrant is very simple to use and can be easily added as plug-in in Eclipse IDE for no cost.
+
+Importance of Unit Testing in Refactoring:
+
+Unit testing is testing single method or class. Unit tests are written before the code during development to ensure that developer writes the good code. To implement the unit testing we can use JUnit framework . It is basically Regression Testing framework. Regression testing basically test for the changes made in programs to ensure that the changes does not breaks the code. 
+Refactoring is the process of changing the internal structure of the code without affecting the external behavior. 
+In refactoring we do not add new features but we improve maintainability of the code. While refining the code we have to make sure that code still functions properly.  
+ 
