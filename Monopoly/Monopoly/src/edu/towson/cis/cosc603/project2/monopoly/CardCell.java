@@ -34,4 +34,12 @@ public class CardCell extends Cell {
     public int getType() {
         return type;
     }
+
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc603.project2.monopoly.Cell#playerMoved(edu.towson.cis.cosc603.project2.monopoly.Player, int, edu.towson.cis.cosc603.project2.monopoly.GameMaster)
+	 */
+	public void playerMoved(Player player, int playerIndex,
+			GameMaster gameMaster) {
+		gameMaster.getGUI().setDrawCardEnabled(true);
+	}
 }

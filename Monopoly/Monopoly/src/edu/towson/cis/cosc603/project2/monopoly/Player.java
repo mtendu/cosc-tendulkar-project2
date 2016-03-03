@@ -113,10 +113,12 @@ public class Player {
 		}
 		properties.clear();
 	}
+
 /**
  * Extracted method colorGroups() from exchangeProperty().
- * @param player
- * @param i
+ *
+ * @param player the player
+ * @param i the i
  */
 	private void colorGroups(Player player, int i) {
 		PropertyCell cell = getProperty(i);
@@ -186,7 +188,7 @@ public class Player {
 	/**
 	 * Gets the out of jail.
 	 *
-	 * @return the out of jail
+	 *
 	 */
 	public void getOutOfJail() {
 		money -= JailCell.BAIL;

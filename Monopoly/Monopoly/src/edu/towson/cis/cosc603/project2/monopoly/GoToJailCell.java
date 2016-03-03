@@ -22,4 +22,18 @@ public class GoToJailCell extends Cell {
 		GameMaster.instance().sendToJail(currentPlayer);
 		return false;
 	}
+
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc603.project2.monopoly.Cell#playerMoved(edu.towson.cis.cosc603.project2.monopoly.Player, int, edu.towson.cis.cosc603.project2.monopoly.GameMaster)
+	 */
+	public void playerMoved(Player player, int playerIndex,
+			GameMaster gameMaster) {
+		if (this.isAvailable()) {
+			int price = this.getPrice();
+			if (price <= player.getMoney() && price > 0) {
+				gameMaster.getGUI().enablePurchaseBtn(playerIndex);
+			}
+		}
+		gameMaster.getGUI().enableEndTurnBtn(playerIndex);
+	}
 }

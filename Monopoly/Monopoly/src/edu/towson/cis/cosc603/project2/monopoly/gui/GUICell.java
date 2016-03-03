@@ -7,14 +7,30 @@ import javax.swing.border.BevelBorder;
 
 import edu.towson.cis.cosc603.project2.monopoly.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GUICell.
+ */
 public class GUICell extends JPanel {
 
 	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The cell. */
 	private Cell cell;
+	
+	/** The lbl info. */
 	private JLabel lblInfo;
+	
+	/** The lbl players. */
 	private JLabel[] lblPlayers = new JLabel[GameMaster.MAX_PLAYER];
 	
+    /**
+     * Instantiates a new GUI cell.
+     *
+     * @param cell the cell
+     */
     public GUICell(Cell cell) {
         this.cell = cell;
         setLayout(new OverlayLayout(this));
@@ -29,13 +45,18 @@ public class GUICell extends JPanel {
         this.doLayout();
 	}
 	
+	/**
+	 * Adds the cell info.
+	 */
 	private void addCellInfo() {
         JPanel pnlInfo = getPnlInfo();
 		add(pnlInfo);
     }
+
 /**
- *  Extracted getPnlInfo() from addCellInfo()
- * @return
+ *  Extracted getPnlInfo() from addCellInfo().
+ *
+ * @return the pnl info
  */
 	private JPanel getPnlInfo() {
 		lblInfo = new JLabel();
@@ -46,12 +67,22 @@ public class GUICell extends JPanel {
 		return pnlInfo;
 	}
 	
+	/**
+	 * Adds the player.
+	 *
+	 * @param index the index
+	 */
 	public void addPlayer(int index) {
 		Player player = GameMaster.instance().getPlayer(index);
 		lblPlayers[index].setText(player.getName().substring(0, 1));
 		lblPlayers[index].setOpaque(true);
 	}
 
+    /**
+     * Creates the player labels.
+     *
+     * @param pnlPlayer the pnl player
+     */
     private void createPlayerLabels(JPanel pnlPlayer) {
 		for (int i = 0; i < GameMaster.MAX_PLAYER; i++) {
 			lblPlayers[i] = new JLabel();
@@ -60,16 +91,29 @@ public class GUICell extends JPanel {
 		}
 	}
 
+	/**
+	 * Display info.
+	 */
 	public void displayInfo() {
 		lblInfo.setText(InfoFormatter.cellInfo(cell));
         this.invalidate();
 		this.repaint();
 	}
 
+	/**
+	 * Gets the cell.
+	 *
+	 * @return the cell
+	 */
 	public IOwnable getCell() {
 		return cell;
 	}
 	
+	/**
+	 * Removes the player.
+	 *
+	 * @param index the index
+	 */
 	public void removePlayer(int index) {
 		lblPlayers[index].setText("");
 		lblPlayers[index].setOpaque(false);

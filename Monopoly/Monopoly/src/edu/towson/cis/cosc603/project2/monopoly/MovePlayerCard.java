@@ -31,9 +31,11 @@ public class MovePlayerCard extends Card {
         int diceValue = getDiceValue();
 		System.out.println(diceValue);
     }
+
 /**
  * extracted getDiceValue() from applyAction().
- * @return
+ *
+ * @return the dice value
  */
 	private int getDiceValue() {
 		Player currentPlayer = GameMaster.instance().getCurrentPlayer();

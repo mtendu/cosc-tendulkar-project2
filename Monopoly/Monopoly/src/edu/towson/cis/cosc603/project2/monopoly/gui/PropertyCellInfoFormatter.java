@@ -4,11 +4,19 @@ import edu.towson.cis.cosc603.project2.monopoly.Cell;
 import edu.towson.cis.cosc603.project2.monopoly.Player;
 import edu.towson.cis.cosc603.project2.monopoly.PropertyCell;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PropertyCellInfoFormatter.
+ */
 public class PropertyCellInfoFormatter extends OwnerName implements CellInfoFormatter {
+    
+    /* (non-Javadoc)
+     * @see edu.towson.cis.cosc603.project2.monopoly.gui.CellInfoFormatter#format(edu.towson.cis.cosc603.project2.monopoly.Cell)
+     */
     public String format(Cell cell) {
         PropertyCell c = (PropertyCell)cell;
         StringBuffer buf = new StringBuffer();
-        String ownerName = ownerName(cell);
+        String ownerName = getOwnerName(cell);
 		buf.append("<html><b><font color='")
                 .append(c.getColorGroup())
                 .append("'>")

@@ -90,4 +90,14 @@ public abstract class Cell implements IOwnable {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
+
+	/**
+	 * Player moved.
+	 *
+	 * @param player the player
+	 * @param playerIndex the player index
+	 * @param gameMaster the game master
+	 */
+	public abstract void playerMoved(Player player, int playerIndex,
+			GameMaster gameMaster);
 }

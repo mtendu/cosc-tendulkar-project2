@@ -359,17 +359,7 @@ public class GameMaster {
 	public void playerMoved(Player player) {
 		Cell cell = player.getPosition();
 		int playerIndex = getPlayerIndex(player);
-		if(cell instanceof CardCell) {
-		    gui.setDrawCardEnabled(true);
-		} else{
-			if(cell.isAvailable()) {
-				int price = cell.getPrice();
-				if(price <= player.getMoney() && price > 0) {
-					gui.enablePurchaseBtn(playerIndex);
-				}
-			}	
-			gui.enableEndTurnBtn(playerIndex);
-		}
+		cell.playerMoved(player, playerIndex, this);
         gui.setTradeEnabled(turn, false);
 	}
 
@@ -383,8 +373,9 @@ public class GameMaster {
 			gameBoard.removeCards();
 		}
 	}
+	
 	/**
-	 * Extracted setPlayerPosition() from reset();
+	 * Extracted setPlayerPosition() from reset();.
 	 */
 	private void setPlayerPosition() {
 		for (int i = 0; i < getNumberOfPlayers(); i++) {
